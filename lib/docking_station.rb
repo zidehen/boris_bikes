@@ -18,6 +18,5 @@ class DockingStation
 
   def dock(bike)
     @bike_available.push(bike)
-    
   end
 end
