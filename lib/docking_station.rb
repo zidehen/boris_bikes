@@ -2,7 +2,7 @@ require_relative 'bike'
 
 class DockingStation
   DEFAULT_CAPACITY = 20
-  attr_reader :bikes, :capacity
+  attr_reader :bikes, :capacity, :report_broken
 
   def initialize(capacity=DEFAULT_CAPACITY)
     @bikes = []
@@ -11,6 +11,7 @@ class DockingStation
 
   def release_bike
     fail "No bikes available" if empty?
+    # fail "Sorry, this bike is broken" if broken?
     @bikes.pop
   end
   
@@ -20,6 +21,10 @@ class DockingStation
   end
 
   private
+
+  # def broken?
+  #   @report_broken
+  # end
   
   def empty?
     @bikes.empty?
